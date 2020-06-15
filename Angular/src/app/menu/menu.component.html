@@ -1,0 +1,33 @@
+
+
+<div class="row">
+    <h2>Menu Card</h2>
+    <form [formGroup]="form" (ngSubmit)="submitForm()" novalidate>
+    <div class="card-deck"  *ngFor="let image of img ; let i=index">
+      <div class="column">
+        <div class="card">
+          <img
+            class="card-img-top"
+            [src]="image.path" alt="test"
+          />
+          <div class="card-body">
+            
+            <h3 class="card-title"><input type="checkbox" [value]="image.value" (change)="onCheckboxChange($event)" />{{image.name }}</h3>
+  
+            <h4 class="card-text"><b>Price</b> : {{image.price}}</h4>
+          </div>
+          
+        </div>
+      </div>
+</div> 
+<p class="error" *ngIf="this.form.controls['checkArray'].errors?.required">
+  Checkbox is required, select atleast one value.
+</p>
+<input type="submit" value="Submit" >
+</form>
+<div class="card-footer">
+  <button (click)="add()" routerLink="/menu">Order</button>
+</div>
+
+
+</div>

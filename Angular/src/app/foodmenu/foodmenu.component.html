@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    
+    <tr>
+      <th>sr.no</th>
+      <th>name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of displayOrders; let i=index">
+      <td>{{i+1}}</td>
+      <td>{{c.name}}</td>
+      <td>{{c.price}}</td>
+     
+    </tr>
+  </tbody>
+</table>
+  
+  
+  
